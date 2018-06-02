@@ -1,0 +1,14 @@
+<body>
+<p style="color:red">[base template]</p>
+<ul >
+  <li style="display: inline"><a href='/'>Home</a></li>
+  <li style="display: inline"><a href='/users/'>Users</a></li>
+  <li style="display: inline"><a href='/login/'>Login</a></li>
+  <li style="display: inline"><a href='/logout/'>Logout</a></li>
+</ul>
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
