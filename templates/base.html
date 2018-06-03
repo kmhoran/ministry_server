@@ -1,0 +1,20 @@
+<body>
+<p style="color:red">[base template]</p>
+<ul >
+
+  <li style="display: inline"><a href='/'>Home</a></li>
+  <li style="display: inline"><a href='/users/'>Users</a></li>
+  {% if user.is_authenticated %}
+  <li style="display: inline"><a href="{% url 'logout'%}">Logout</a></li>
+  {% else %}
+  <li style="display: inline"><a href="{% url 'login'%}">Login</a></li>
+  {% endif %}
+</ul>
+<div class="container">
+    {% block content %}
+    {% endblock %}
+    <p>{{ user }}</p>
+    <p>logged in: {{ user.is_authenticated }}</p>
+</div>
+
+</body>
