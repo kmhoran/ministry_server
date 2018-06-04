@@ -9,7 +9,7 @@ import appOne
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('api/', include('main.api-urls')),
     path('members/', include('appOne.urls')),
-    path('', TemplateView.as_view(template_name='main/index.html'), name='index'),   
+    path('', include('main.urls'), name='index'),   
 ]
