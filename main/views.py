@@ -4,10 +4,13 @@ from main.models import Menu, Page
 # Create your views here.
 
 def index(request):
-    queryset = Menu.objects.all()
-    serializer = MenuSerializer(queryset)
+    nav = None
+    if request.user.is_authenticated:
+        queryset = Menu.objects.all()
+        serializer = MenuSerializer(queryset, many=True)
+        nav = serializer.data
     return render(
         request,
-        'appOne/index.html',
-        context={'nav':serializer.data},
+        'main/index.html',
+        context={'nav':nav},
     )
