@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGIN_REDIRECT_URL = '/users/'
+LOGIN_REDIRECT_URL = 'member-index'
 
 
 # Internationalization
