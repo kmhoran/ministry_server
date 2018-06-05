@@ -2,8 +2,8 @@
 <p style="color:red">[base template]</p>
 <ul >
 
-  <li style="display: inline"><a href="{% url 'main-index' %}">Home</a></li>
-  <li style="display: inline"><a href="{% url 'member-index' %}">Users</a></li>
+  <li style="display: inline"><a href="{% url 'public-index' %}">Home</a></li>
+  <li style="display: inline"><a href="{% url 'members-index' %}">Members</a></li>
   {% if user.is_authenticated %}
   <li style="display: inline"><a href="{% url 'logout'%}">Logout</a></li>
   {% else %}

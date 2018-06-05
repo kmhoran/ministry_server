@@ -8,7 +8,7 @@ from appOne.core import views as core_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('api/', include('main.api-urls')),
-    path('members/', include('appOne.urls')),
-    path('', include('main.urls')),   
+    # path('api/', include('main.api-urls')),
+    path('members/', include('members.urls')),
+    path('', include('public.urls')),   
 ]

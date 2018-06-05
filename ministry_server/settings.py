@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'public',
+    'members',
     'main',
     'appOne',
     'rest_framework',
@@ -105,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGIN_REDIRECT_URL = 'main-index'
+LOGIN_REDIRECT_URL = 'members-index'
 
 
 # Internationalization
