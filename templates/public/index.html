@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Index{% endblock %}
+{% block styles %}
+<meta charset="utf-8">
+  <title>MinistryClient</title>
+  <base href="/">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="{% static 'public/favicon.ico' %}">
+  <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" 
+        crossorigin="anonymous">
+{% endblock %}
 {% block content %}
-<h2>Public App</h2>
+  <app-root></app-root>
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'public/runtime.js' %}"></script>
+<script type="text/javascript" src="{% static 'public/polyfills.js' %}"></script>
+<script type="text/javascript" src="{% static 'public/styles.js' %}"></script>
+<script type="text/javascript" src="{% static 'public/scripts.js' %}"></script>
+<script type="text/javascript" src="{% static 'public/vendor.js' %}"></script>
+<script type="text/javascript" src="{% static 'public/main.js' %}"></script>
 {% endblock %}

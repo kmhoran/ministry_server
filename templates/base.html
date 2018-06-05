@@ -1,20 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% block styles %}
+{% endblock %}
+</head>
 <body>
-<p style="color:red">[base template]</p>
-<ul >
+  <div class="app-links">
+    <ul class="link-list">
+        {% if user.is_authenticated %}   
+        <li class="link-item">
+            <a class="link" href="{% url 'public-index' %}">Public</a>
+        </li>
+        <li class="link-item">
+            <a class="link" href="{% url 'members-index' %}">Members</a>
+        </li>
+        <li class="link-item">
+            <a class="link" href="#">Officers</a>
+        </li>   
+        <li class="link-item">
+            <a class="link" href="{% url 'logout'%}">Logout</a>
+        </li>
+        {% else %}
+        <li class="link-item">
+            <a class="link" href="{% url 'login'%}">Login</a>
+        </li>
+        {% endif %}
+    </ul>
+  </div>
 
-  <li style="display: inline"><a href="{% url 'public-index' %}">Home</a></li>
-  <li style="display: inline"><a href="{% url 'members-index' %}">Members</a></li>
-  {% if user.is_authenticated %}
-  <li style="display: inline"><a href="{% url 'logout'%}">Logout</a></li>
-  {% else %}
-  <li style="display: inline"><a href="{% url 'login'%}">Login</a></li>
-  {% endif %}
-</ul>
-<div class="container">
     {% block content %}
     {% endblock %}
     <p>{{ user }}</p>
     <p>logged in: {{ user.is_authenticated }}</p>
-</div>
 
+{% block scripts %}
+{% endblock %}
 </body>
