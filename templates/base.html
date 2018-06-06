@@ -1,6 +1,8 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
+        <link rel="stylesheet" href="{% static 'shared/styles.css' %}">
 {% block styles %}
 {% endblock %}
 </head>
@@ -21,6 +23,9 @@
             <a class="link" href="{% url 'logout'%}">Logout</a>
         </li>
         {% else %}
+        <li class="link-item">
+                <a class="link" href="{% url 'public-index' %}">Home</a>
+            </li>
         <li class="link-item">
             <a class="link" href="{% url 'login'%}">Login</a>
         </li>
