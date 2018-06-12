@@ -11,6 +11,6 @@ def index(request):
         context={},
     )
 
-clas ApiEndpoint(ProtectedResourceView):
+class ApiEndpoint(ProtectedResourceView):
     def get(self, request, *args, **kwargs):
         return HttpResponse('Hello, OAuth2!')
