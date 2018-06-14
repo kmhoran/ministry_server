@@ -11,3 +11,8 @@ class Page(models.Model):
     display = models.CharField(max_length=50)
     url = models.CharField(max_length=150)
     menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
+
+
+class Penguin(models.Model):
+    name = models.CharField(max_length=100)
+    color = models.CharField(max_length=100)

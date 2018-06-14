@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from main.models import Menu, Page
+from main.models import Menu, Page, Penguin
 
 class PageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,3 +18,10 @@ class MenuSerializer(serializers.ModelSerializer):
                 'name',
                 'display',
                 'page_set') 
+
+class PenguineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Penguin
+        fields=('id',
+                'name',
+                'color')

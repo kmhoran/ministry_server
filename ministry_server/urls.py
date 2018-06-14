@@ -10,7 +10,7 @@ admin.autodiscover()
 # from appOne.core import views as core_views
 # from ministry_server import appOne
 
-from appOne.views import ApiEndpoint
+# from appOne.views import ApiEndpoint
 
 
 urlpatterns = [
@@ -19,6 +19,6 @@ urlpatterns = [
     path('api/', include('main.api-urls')),
     path('members/', include('members.urls')),
     # path('o/', include('appOne.oauth_urls')),
-    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    # path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('', include('public.urls')),   
 ]
