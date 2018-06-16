@@ -16,7 +16,8 @@ class MenuSerializer(serializers.ModelSerializer):
         model=Menu
         fields=('id',
                 'name',
-                'display',
+                'display', 
+                'audience',
                 'page_set') 
 
 class PenguineSerializer(serializers.ModelSerializer):
@@ -24,4 +25,5 @@ class PenguineSerializer(serializers.ModelSerializer):
         model=Penguin
         fields=('id',
                 'name',
-                'color')
+                'color',
+                'is_black')
