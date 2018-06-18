@@ -33,3 +33,4 @@ class Penguin(models.Model):
     @property
     def is_black(self):
         return True if self.color == 'black' else False
+    

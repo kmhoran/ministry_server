@@ -48,4 +48,7 @@ class CanViewOfficerMenu(permissions.BasePermission):
             user_permissions.append(p)
 
         view_permission = "main.can_access_officer_menu"
+        
         return view_permission in user_permissions
+
+    

@@ -16,7 +16,7 @@ admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('api/', include('main.api-urls')),
+    path('api/', include('pages.urls')),
     path('members/', include('members.urls')),
     # path('o/', include('appOne.oauth_urls')),
     # path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
