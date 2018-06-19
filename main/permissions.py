@@ -16,7 +16,15 @@ class CanSeePenguins(permissions.BasePermission):
         user_permissions = []
         for p in request.user.get_all_permissions():
             user_permissions.append(p)
-
+        # for g in request.user.groups:
+        #     print(g.name)
+        print("groups: ", request.user.groups.all())
+        for g in request.user.groups.all():
+            print("> ", g.id)
+        if request.user.groups.filter(name="MinistryOfficer").exists():
+            print("user is an officer")
+        else:
+            print("## not quite ##")
         view_permission = "main.can_see_penguins"
         return view_permission in user_permissions
 
@@ -46,6 +54,7 @@ class CanViewOfficerMenu(permissions.BasePermission):
         user_permissions = []
         for p in request.user.get_all_permissions():
             user_permissions.append(p)
+        
 
         view_permission = "main.can_access_officer_menu"
         

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from pages.models import  PageDomains, Pages
+from pages.models import  PageDomains, Pages, Profile
 
 class PagesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,8 +9,8 @@ class PagesSerializer(serializers.ModelSerializer):
                 'display',
                 'url',
                 'pageDomain',
-                'content',
-                'pageType')
+                'pageType',
+                'audience')
 
 class PageDomainsSerializer(serializers.ModelSerializer):
     pages_set = PagesSerializer(required=False, read_only=True, many=True)
@@ -19,5 +19,12 @@ class PageDomainsSerializer(serializers.ModelSerializer):
         fields=('id',
                 'name',
                 'display', 
-                'audience',
                 'pages_set') 
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Profile
+        fields=('firstName',
+                'lastName',
+                'email',
+                'isOfficer')
